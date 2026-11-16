@@ -1,0 +1,23 @@
+[project]
+name = "Umm_Font"
+version = "0.1.0"
+description = "Seed 기반 한글 치환 + 난독화 폰트 생성 (크롤러 방해용)"
+requires-python = ">=3.10"
+dependencies = ["fonttools>=4.50", "brotli"]
+
+[project.optional-dependencies]
+dev = ["pytest", "pillow", "opentype-sanitizer"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["Umm_Font"]
+
+[tool.setuptools.package-data]
+Umm_Font = ["fonts/*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
